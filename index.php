@@ -22,32 +22,59 @@ endforeach;
         <title>rssfeed</title>
     </head> 
     <body>
-    <nav class='red'>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><i class="material-icons">list_alt</i>rssfeed</a>
-      <ul class="right hide-on-med-and-down">
-          <?php
+        <nav class='red'>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo"><i class="material-icons">list_alt</i>rssfeed</a>
+                <ul class="right hide-on-med-and-down">
+                    <li class=""><a href="http://www.rssfeed.info/">acceuil</a></li>
+                    <?php
                     foreach ($tableRSS as $key => $value):
                         ?><li><a href = "<?= $key; ?>"><?= ${'xml' . $key}->channel->title; ?>
                             </a>
                             <?php
                         endforeach;
                         ?>
-        <li class='red'><a href="sass.html"><i class="material-icons">search</i></a></li>
-        <li class='red'><a href="badges.html"><i class="material-icons">security</i></a></li>
-        <li class='red'><a href="settings.html"><i class="material-icons">settings</i></a></li>
-         <li class='red'<a href=""><i class="">Yoan</i></a></li>
-        <li class='red'><a href="mobile.html"><i class="material-icons">toggle_on</i></a></li>
-      </ul>
-    </div>
-  </nav>
-        
-        
-        
-        
-        <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="assets/scripts/Projet.js"></script>
-    </body>
-</html>
+                    <li class=''><a href="sass.html"><i class="material-icons">search</i></a></li>
+                    <li class=''><a href="badges.html"><i class="material-icons">security</i></a></li>
+                    <li class=''><a href="settings.html"><i class="material-icons">settings</i></a></li>
+                    <li class=''<a href=""><i class="">Yoan</i></a></li>
+                    <li class=''><a href="mobile.html"><i class="material-icons">toggle_on</i></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="red">
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <img src="" alt="" class="circle">
+                    <span class="title">Title</span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>  
+                    </div>
+
+                    <div class="row">
+                        <div class="red col s12 m3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/sample-1.jpg">
+                                    <p class="card-title blue-text">date</p><br/>
+                                    <span class="card-title blue-text">Card Title</span>
+
+                                </div>
+                                <div class="card-content">
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">description</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                    <script src="assets/scripts/Projet.js"></script>
+                    </body>
+                    </html>

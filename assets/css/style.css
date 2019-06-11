@@ -1,9 +1,19 @@
+nav{
+margin-bottom: 1rem;    
+}
+
 .red{
+ border: solid 0.1rem;
  border-color: #E32727;
 }
 .blue{
+ border: solid 0.1rem;   
  border-color: #529CFF;
 }
 .black{
+ border: solid 0.1rem;
  border-color: #040405;
+}
+div{
+margin-bottom: 1rem;
 }
