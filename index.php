@@ -65,7 +65,7 @@ endforeach;
                                 <div class="card-content">
                                 </div>
                                 <div class="card-action">
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
+                                    <a class="waves-effect waves-light btn modal-trigger blue" href="#modal1">description</a>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
