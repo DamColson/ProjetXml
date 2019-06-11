@@ -1,3 +1,13 @@
+<?php
+$tableRSS = ['Technos' => 'https://www.01net.com/rss/actualites/technos/',
+    'Applis' => 'https://www.01net.com/rss/actualites/applis-logiciels/',
+    'Security' => 'https://www.01net.com/rss/actualites/securite/'
+];
+foreach ($tableRSS as $key => $value):
+    ${'xml' . $key} = simplexml_load_file($value);
+endforeach;
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -16,10 +26,17 @@
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><i class="material-icons">list_alt</i>rssfeed</a>
       <ul class="right hide-on-med-and-down">
-          <li class='red'<a href=""><i class="">Yoan</i></a></li>
+          <?php
+                    foreach ($tableRSS as $key => $value):
+                        ?><li><a href = "<?= $key; ?>"><?= ${'xml' . $key}->channel->title; ?>
+                            </a>
+                            <?php
+                        endforeach;
+                        ?>
         <li class='red'><a href="sass.html"><i class="material-icons">search</i></a></li>
         <li class='red'><a href="badges.html"><i class="material-icons">security</i></a></li>
         <li class='red'><a href="settings.html"><i class="material-icons">settings</i></a></li>
+         <li class='red'<a href=""><i class="">Yoan</i></a></li>
         <li class='red'><a href="mobile.html"><i class="material-icons">toggle_on</i></a></li>
       </ul>
     </div>
