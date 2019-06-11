@@ -2,5 +2,3 @@
     $('.sidenav').sidenav();
     $('select').formSelect();
   });
-  
-  
