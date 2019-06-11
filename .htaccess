@@ -5,3 +5,5 @@ RewriteRule ^Applis$ index.php?page=Applis [L]
 RewriteRule ^Security$ index.php?page=Security [L]
 RewriteRule ^Accueil$ index.php?page=Accueil [L]
 RewriteRule ^Disconnect$ index.php?page=Disconnect [L]
+
+ErrorDocument 404 /error_404.php
