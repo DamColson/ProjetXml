@@ -3,3 +3,4 @@ RewriteEngine On
 RewriteRule ^Technos$ index.php?page=Technos [L]
 RewriteRule ^Applis$ index.php?page=Applis [L]
 RewriteRule ^Security$ index.php?page=Security [L]
+RewriteRule ^Accueil$ index.php?page=Accueil [L]
