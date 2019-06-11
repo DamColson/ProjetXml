@@ -6,12 +6,24 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Germania+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-        <title></title>
+        <title>rssfeed</title>
     </head> 
     <body>
-    
+    <nav class='red'>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">list_alt</i>rssfeed</a>
+      <ul class="right hide-on-med-and-down">
+          <li class='red'<a href=""><i class="">Yoan</i></a></li>
+        <li class='red'><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li class='red'><a href="badges.html"><i class="material-icons">security</i></a></li>
+        <li class='red'><a href="settings.html"><i class="material-icons">settings</i></a></li>
+        <li class='red'><a href="mobile.html"><i class="material-icons">toggle_on</i></a></li>
+      </ul>
+    </div>
+  </nav>
         
         
         

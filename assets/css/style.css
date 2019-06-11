@@ -1,0 +1,15 @@
+.red{
+ border-radius: 0.3rem;
+ 
+ border-color: #E32727;
+}
+.blue{
+ border-radius: 0.3rem;
+ border: 0.1rem solid;
+ border-color: #529CFF;
+}
+.black{
+ border-radius: 0.3rem;
+ border: 0.1rem solid;
+ border-color: #040405;
+}
