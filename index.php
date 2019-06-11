@@ -65,16 +65,29 @@ endforeach;
                                 <div class="card-content">
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+
+  </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                
 
 
                     <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                    <script src="assets/scripts/Projet.js"></script>
+                    <script src="assets/scripts/main.js"></script>
                     </body>
                     </html>
