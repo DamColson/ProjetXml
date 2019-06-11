@@ -1,14 +1,5 @@
 <?php
-$tableRSS = ['Technos' => 'https://www.01net.com/rss/actualites/technos/',
-    'Applis' => 'https://www.01net.com/rss/actualites/applis-logiciels/',
-    'Security' => 'https://www.01net.com/rss/actualites/securite/'
-];
-foreach ($tableRSS as $key => $value):
-    ${'xml' . $key} = simplexml_load_file($value);
-endforeach;
-foreach ($_POST as $key => $value):
-    setcookie($key, $value, time() + 24 * 3600);
-endforeach;
+include 'file.php';
 ?>
 
 
@@ -26,7 +17,14 @@ endforeach;
         <title></title>
     </head> 
     <body>
-        <nav class='red'>
+        <nav class='<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?>'>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo"><i class="material-icons">list_alt</i>rssfeed</a>
                 <ul class="right hide-on-med-and-down">
@@ -53,7 +51,14 @@ endforeach;
                 <div class="row">
                     <?php foreach ($xmlTechnos->channel->item as $elements):
                         ?>
-                        <div class="red col s12">
+                        <div class="<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?> col s12">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
@@ -75,7 +80,14 @@ endforeach;
                 <div class="row">
                     <?php foreach ($xmlApplis->channel->item as $elements):
                         ?>
-                        <div class="red col s12">
+                        <div class="<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?> col s12">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
@@ -97,7 +109,14 @@ endforeach;
                 <div class="row">
                     <?php foreach ($xmlSecurity->channel->item as $elements):
                         ?>
-                        <div class="red col s12">
+                        <div class="<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?> col s12">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
@@ -118,7 +137,14 @@ endforeach;
                 ?>
                 <div class="row">
                     <div class="col s4"><?php for ($i = 0; $i <= $_COOKIE['numbArticle']; $i++):
-                    ?><div class="red">
+                    ?><div class="<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?>">
                                 <ul class="collection">
                                     <li class="collection-item avatar">
                                         <img src="<?= $xmlSecurity->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
@@ -131,7 +157,14 @@ endforeach;
                                     ?>
                                     </div>
                                     <div class="col s4"><?php for ($i = 0; $i <= $_COOKIE['numbArticle']; $i++):
-                                        ?><div class="red">
+                                        ?><div class="<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?>">
                                                 <ul class="collection">
                                                     <li class="collection-item avatar">
                                                         <img src="<?= $xmlApplis->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
@@ -144,7 +177,14 @@ endforeach;
                                                     ?>
                                                     </div>
                                                     <div class="col s4"><?php for ($i = 0; $i <= $_COOKIE['numbArticle']; $i++):
-                                                        ?><div class="red">
+                                                        ?><div class="<?php if($_COOKIE['design'] == 'Rouge'):
+                        echo 'red';
+                    elseif($_COOKIE['design'] == 'Bleu'):
+                        echo 'blue';
+                    elseif($_COOKIE['design'] == 'Noir'):
+                        echo 'black';
+                    endif;
+?>">
                                                                 <ul class="collection">
                                                                     <li class="collection-item avatar">
                                                                         <img src="<?= $xmlTechnos->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
