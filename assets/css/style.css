@@ -12,10 +12,17 @@ nav ul a {
     cursor: pointer;
 }
 
+.collecTitle{
+    font-size:2rem;
+    text-align:center;
+   
+}
+
 .red{
  border: solid 0.01rem;
  border-color: #E32727;
 }
+
 .blue{
  border: solid 0.01rem;   
  border-color: #529CFF;
@@ -24,22 +31,47 @@ nav ul a {
  border: solid 0.01rem;
  border-color: #040405;
 }
+
 div{
 margin-bottom: 1rem;
 }
 
 .collection{
  background-color: white; 
- border-radius: 0.3rem;
- height: 10rem;   
+ border-radius: 0.3rem; 
+ border: 1px solid #e0e0e0;  
+ border-radius: 2px;
+ overflow: hidden;
+ position: relative;
+ height:12rem;
+}
+
+.collecRow{
+    height:5rem;
+    align-items: center;
 }
 
 .card{
-    height: 45.5rem;
+    height: 35rem;
     border: solid 0.2rem;
     border-color: goldenrod;
     border-radius: 0.3rem;
     position: relative;
+}
+
+.upperCardRow{
+    height:14.5rem;
+}
+
+.lowerCardRow{
+    height:3rem;
+}
+
+.modalBeautify{
+    border: solid 0.2rem;
+    border-color: goldenrod;
+    border-radius: 0.3rem;
+    text-align:center;
 }
 
 img{
@@ -54,7 +86,7 @@ form{
    background-color: lightcyan;
    margin-left: auto;
    margin-right: auto;
-   width: 50rem;
+   width:90%;
    height: 30rem;
 }
 
@@ -114,8 +146,6 @@ a {
  .card {
     margin-left: auto;
     margin-right: auto; 
-    width: 27rem;
-    height: 33rem;
     border: solid 0.5rem;
     border-color: goldenrod;
     border-radius: 0.3rem;
@@ -150,3 +180,95 @@ div {
     box-sizing: inherit;
 }
  
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #2bbbad;
+}
+.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-floating:hover {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+.btn, .btn-large, .btn-small, .btn-flat {
+    margin-bottom: 0.2rem;
+    float: right;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+.btn, .btn-large, .btn-small {
+    margin-bottom: 0.3rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+}
+.btn, .btn-large, .btn-small, .btn-floating, .btn-large, .btn-small, .btn-flat {
+    font-size: 14px;
+    outline: 0;
+}
+.btn, .btn-large, .btn-small, .btn-flat {
+    
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+a {
+    color: #FF9733;
+}
+a {
+    text-decoration: none;
+}
+a {
+    color: #039be5;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+*, ::before, ::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+ul:not(.browser-default) {
+    list-style-type: none;
+}

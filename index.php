@@ -22,10 +22,20 @@ $cardNumb=0;
         <div id="modal1" class="modal">
     <div class="modal-content">
         <h4></h4>
-      <p></p>
+      <p class="modalBeautify"></p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" type="button" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn modal-close waves-effect waves-green btn-flat">Fermer</a>
     </div>
 </div>
         <nav class='<?php
@@ -41,6 +51,7 @@ $cardNumb=0;
         ?>'>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo"><i class="material-icons">list_alt</i>rssfeed</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li class=""><a href="Accueil">Accueil</a></li>
                     <?php
@@ -50,14 +61,24 @@ $cardNumb=0;
                             <?php
                         endforeach;
                         ?>
-                    <li class=''><a href=""><i class="material-icons">search</i></a></li>
-                    <li class=''><a href=""><i class="material-icons">security</i></a></li>
                     <li class=''><a href="Disconnect"><i class="material-icons">settings</i></a></li>
                     <li class=''<a href=""><i class=""><?= isset($_COOKIE['firstName']) ? $_COOKIE['firstName'] : ''; ?></i></a></li>
                     <li class=''><a href="Disconnect"><i class="material-icons">toggle_on</i></a></li>
                 </ul>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-demo">
+    <li class=""><a href="Accueil">Accueil</a></li>
+                    <?php
+                    foreach ($tableRSS as $key => $value):
+                        ?><li><a href = "<?= $key; ?>"><?= ${'xml' . $key}->channel->title; ?>
+                            </a>
+                            <?php
+                        endforeach;
+                        ?>
+                    <li class=''><a href="Disconnect"><i class="material-icons">settings</i></a></li>
+                    <li class=''><a href="Disconnect"><i class="material-icons">toggle_on</i></a></li>
+  </ul>
         <?php
         if (isset($_COOKIE['firstName']) && isset($_COOKIE['lastName']) && isset($_COOKIE['design']) && isset($_COOKIE['numbArticle'])):
             if (isset($_GET['page']) && $_GET['page'] == 'Technos'):
@@ -75,18 +96,32 @@ $cardNumb=0;
                         elseif (count($_COOKIE) == 0):
                             echo 'red';
                         endif;
-                        ?> col m4">
+                        ?> col s12 l4">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
                                 </div>
+                                <div class="row upperCardRow">
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
-                                    <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <p class="card-title blue-text"><?= ucfirst(dateFr($elements->pubDate)); ?></p>
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
+                                </div>
+                                <div class="row lowerCardRow">
                                 <div class="card-action">
-                                    <a data-page="xmlTechnos" data-card="<?=$cardNumb;?>" class=" modal-trigger triggerDescription" href="#modal1">description</a>
+                                    <a type="button" data-page="xmlTechnos" data-card="<?=$cardNumb;?>" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn modal-trigger triggerDescription" href="#modal1">description</a>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -110,18 +145,28 @@ $cardNumb=0;
                         elseif (count($_COOKIE) == 0):
                             echo 'red';
                         endif;
-                        ?> col m4">
+                        ?> col s12 l4">
                             <div class="card ">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
                                 </div>
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
-                                    <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <p class="card-title blue-text"><?= ucfirst(dateFr($elements->pubDate)); ?></p>
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a data-page="xmlApplis" data-card="<?=$cardNumb;?>" class=" modal-trigger triggerDescription" href="#modal1">description</a>
+                                    <a type="button" data-page="xmlApplis" data-card="<?=$cardNumb;?>" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn modal-trigger triggerDescription" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
@@ -145,18 +190,28 @@ $cardNumb=0;
                         elseif (count($_COOKIE) == 0):
                             echo 'red';
                         endif;
-                        ?> col m4">
+                        ?> col s12 l4">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
                                 </div>
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
-                                    <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <p class="card-title blue-text"><?= ucfirst(dateFr($elements->pubDate)); ?></p>
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a data-page="xmlSecurity" data-card="<?=$cardNumb;?>" class=" modal-trigger triggerDescription" href="#modal1">description</a>
+                                    <a type="button" data-page="xmlSecurity" data-card="<?=$cardNumb;?>" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn modal-trigger triggerDescription" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +223,8 @@ $cardNumb=0;
             elseif ((isset($_GET['page']) && $_GET['page'] == 'Accueil') || count($_GET) == 0):
                 ?>
                 <div class="row">
-                    <div class="col s4"><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
+                    <div class="col s12 l4">
+                        <p class="collecTitle">Sécurité</p><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
                     ?><div class="<?php
                             if ($_COOKIE['design'] == 'Rouge'):
                                 echo 'red';
@@ -182,17 +238,32 @@ $cardNumb=0;
                             ?>">
                                 <ul class="collection">
                                     <li class="collection-item avatar">
+                                        <div class="row collecRow">
                                         <img src="<?= $xmlSecurity->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                         <span class="title"><?= $xmlSecurity->channel->item[$i]->title ?></span>
-                                        <p><?= $xmlSecurity->channel->item[$i]->pubDate ?></p>
+                                        <p><?= ucfirst(dateFr($xmlSecurity->channel->item[$i]->pubDate)) ?></p>
+                                        </div>
+                                        <div class="row collecRow">
                                         <a href="<?= $xmlSecurity->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
-                                        <a data-card="<?=$i;?>" data-page="xmlSecurity" type="button" class="btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
+                                        <a data-card="<?=$i;?>" data-page="xmlSecurity" type="button" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
+                                        </div>
                                         </div>
                                         <?php
                                     endfor;
                                     ?>
                                     </div>
-                                    <div class="col s4"><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
+                                    <div class="col s12 l4">
+                                        <p class="collecTitle">Application/Logiciel</p><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
                                         ?><div class="<?php
                                             if ($_COOKIE['design'] == 'Rouge'):
                                                 echo 'red';
@@ -206,17 +277,32 @@ $cardNumb=0;
                                             ?>">
                                                 <ul class="collection">
                                                     <li class="collection-item avatar">
+                                                        <div class="row collecRow">
                                                         <img src="<?= $xmlApplis->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                         <span class="title"><?= $xmlApplis->channel->item[$i]->title ?></span>
-                                                        <p><?= $xmlApplis->channel->item[$i]->pubDate ?></p>
+                                                        <p><?= ucfirst(dateFr($xmlApplis->channel->item[$i]->pubDate)) ?></p>
+                                                        </div>
+                                                        <div class="row collecRow">
                                                         <a href="<?= $xmlApplis->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
-                                                        <a data-card="<?=$i;?>" data-page="xmlApplis" type="button" class="btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
+                                                        <a data-card="<?=$i;?>" data-page="xmlApplis" type="button" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
+                                                        </div>
                                                         </div>
                                                         <?php
                                                     endfor;
                                                     ?>
                                                     </div>
-                                                    <div class="col s4"><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
+                                                    <div class="col s12 l4">
+                                                        <p class="collecTitle">Technologies</p><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
                                                         ?><div class="<?php
                                                             if ($_COOKIE['design'] == 'Rouge'):
                                                                 echo 'red';
@@ -230,11 +316,25 @@ $cardNumb=0;
                                                             ?>">
                                                                 <ul class="collection">
                                                                     <li class="collection-item avatar">
+                                                                        <div class="row collecRow">
                                                                         <img src="<?= $xmlTechnos->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                                         <span class="title"><?= $xmlTechnos->channel->item[$i]->title ?></span>
-                                                                        <p><?= $xmlTechnos->channel->item[$i]->pubDate ?></p>
+                                                                        <p><?= ucfirst(dateFr($xmlTechnos->channel->item[$i]->pubDate)) ?></p>
+                                                                        </div>
+                                                                        <div class="row collecRow">
                                                                         <a href="<?= $xmlTechnos->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
-                                                                        <a data-card="<?=$i;?>" data-page="xmlTechnos" type="button" class="btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
+                                                                        <a data-card="<?=$i;?>" data-page="xmlTechnos" type="button" class="<?php
+        if ($_COOKIE['design'] == 'Rouge'):
+            echo 'red';
+        elseif ($_COOKIE['design'] == 'Bleu'):
+            echo 'blue';
+        elseif ($_COOKIE['design'] == 'Noir'):
+            echo 'black';
+        elseif (count($_COOKIE) == 0):
+            echo 'red';
+        endif;
+        ?> btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
+                                                                        </div>
                                                                         </div>
                                                                         <?php
                                                                     endfor;
