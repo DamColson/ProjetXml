@@ -8,8 +8,6 @@ $(document).ready(function(){
 $('.triggerDescription').click(function(){
    var page = $(this).data('page');
    var cardNumb = $(this).data('card');
-   console.log(page);
-   console.log(cardNumb);
 
 
 $.ajax({
