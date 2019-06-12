@@ -1,9 +1,6 @@
 <?php
 include 'file.php';
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -33,8 +30,8 @@ include 'file.php';
                 <ul class="right hide-on-med-and-down">
                     <li class=""><a href="Accueil">Accueil</a></li>
                     <?php
-                        foreach ($tableRSS as $key => $value):
-                            ?><li><a href = "<?= $key; ?>"><?= ${'xml' . $key}->channel->title; ?>
+                    foreach ($tableRSS as $key => $value):
+                        ?><li><a href = "<?= $key; ?>"><?= ${'xml' . $key}->channel->title; ?>
                             </a>
                             <?php
                         endforeach;
@@ -72,13 +69,14 @@ include 'file.php';
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
                                     <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
                 <?php
             elseif (isset($_GET['page']) && $_GET['page'] == 'Applis'):
@@ -104,17 +102,18 @@ include 'file.php';
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
                                     <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
-                    <?php
-                elseif (isset($_GET['page']) && $_GET['page'] == 'Security'):
-                    ?>
+                <?php
+            elseif (isset($_GET['page']) && $_GET['page'] == 'Security'):
+                ?>
                 <div class="row">
                     <?php foreach ($xmlSecurity->channel->item as $elements):
                         ?>
@@ -136,20 +135,21 @@ include 'file.php';
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
                                     <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
-                        <?php
-                    elseif ((isset($_GET['page']) && $_GET['page'] == 'Accueil') || count($_GET) == 0):
-                        ?>
+                <?php
+            elseif ((isset($_GET['page']) && $_GET['page'] == 'Accueil') || count($_GET) == 0):
+                ?>
                 <div class="row">
                     <div class="col s4"><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
-                            ?><div class="<?php
+                    ?><div class="<?php
                             if ($_COOKIE['design'] == 'Rouge'):
                                 echo 'red';
                             elseif ($_COOKIE['design'] == 'Bleu'):
@@ -165,14 +165,15 @@ include 'file.php';
                                         <img src="<?= $xmlSecurity->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                         <span class="title"><?= $xmlSecurity->channel->item[$i]->title ?></span>
                                         <p><?= $xmlSecurity->channel->item[$i]->pubDate ?></p>
-                                        <a type="button" class="btn waves-effect waves-light" href="">Description</a>
+                                        <a href="<?= $xmlSecurity->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
+                                        <a type="button" class="waves-effect waves-light btn modal-trigger" href="#modal1">Description</a>
                                         </div>
-                                            <?php
-                                        endfor;
-                                        ?>
+                                        <?php
+                                    endfor;
+                                    ?>
                                     </div>
                                     <div class="col s4"><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
-                                            ?><div class="<?php
+                                        ?><div class="<?php
                                             if ($_COOKIE['design'] == 'Rouge'):
                                                 echo 'red';
                                             elseif ($_COOKIE['design'] == 'Bleu'):
@@ -188,14 +189,15 @@ include 'file.php';
                                                         <img src="<?= $xmlApplis->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                         <span class="title"><?= $xmlApplis->channel->item[$i]->title ?></span>
                                                         <p><?= $xmlApplis->channel->item[$i]->pubDate ?></p>
-                                                        <a type="button" class="btn waves-effect waves-light" href="">Description</a>
+                                                        <a href="<?= $xmlApplis->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
+                                                        <a type="button" class="waves-effect waves-light btn modal-trigger" href="#modal1">Description</a>
                                                         </div>
-                                                            <?php
-                                                        endfor;
-                                                        ?>
+                                                        <?php
+                                                    endfor;
+                                                    ?>
                                                     </div>
                                                     <div class="col s4"><?php for ($i = 0; $i < $_COOKIE['numbArticle']; $i++):
-                                                            ?><div class="<?php
+                                                        ?><div class="<?php
                                                             if ($_COOKIE['design'] == 'Rouge'):
                                                                 echo 'red';
                                                             elseif ($_COOKIE['design'] == 'Bleu'):
@@ -211,14 +213,14 @@ include 'file.php';
                                                                         <img src="<?= $xmlTechnos->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                                         <span class="title"><?= $xmlTechnos->channel->item[$i]->title ?></span>
                                                                         <p><?= $xmlTechnos->channel->item[$i]->pubDate ?></p>
-                                                                        <a type="button" class="btn waves-effect waves-light" href="">Description</a>
+                                                                        <a href="<?= $xmlTechnos->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
+                                                                        <a type="button" class="waves-effect waves-light btn modal-trigger" href="#modal1">Description</a>
                                                                         </div>
                                                                         <?php
                                                                     endfor;
                                                                     ?></div>
                                                                     </div> 
                                                                     <?php
-
                                                                 endif;
                                                             else:
                                                                 ?><form action="index.php" method="POST">
@@ -240,11 +242,22 @@ include 'file.php';
                                                                     </select>
                                                                     <button type="submit" class="btn waves-effect waves-light">Envoyer</button>
                                                                 </form>
+                                                                <!-- Modal Structure -->
+                                                                <div id="modal1" class="modal">
+                                                                    <div class="modal-content">
+                                                                        <h4>Modal Header</h4>
+                                                                        <p>A bunch of text</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                                    </div>
+
+                                                                </div>
 
 
-<?php
-endif;
-?>
+                                                            <?php
+                                                            endif;
+                                                            ?>
                                                             <script src = "https://code.jquery.com/jquery-3.4.0.js" integrity = "sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin = "anonymous"></script>
                                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
