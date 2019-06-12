@@ -1,0 +1,274 @@
+nav{
+margin-bottom: 1rem;    
+}
+
+nav ul a {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    font-size: 1rem;
+    color: #F7F6F9;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.collecTitle{
+    font-size:2rem;
+    text-align:center;
+   
+}
+
+.red{
+ border: solid 0.01rem;
+ border-color: #E32727;
+}
+
+.blue{
+ border: solid 0.01rem;   
+ border-color: #529CFF;
+}
+.black{
+ border: solid 0.01rem;
+ border-color: #040405;
+}
+
+div{
+margin-bottom: 1rem;
+}
+
+.collection{
+ background-color: white; 
+ border-radius: 0.3rem; 
+ border: 1px solid #e0e0e0;  
+ border-radius: 2px;
+ overflow: hidden;
+ position: relative;
+ height:12rem;
+}
+
+.collecRow{
+    height:5rem;
+    align-items: center;
+}
+
+.card{
+    height: 35rem;
+    border: solid 0.2rem;
+    border-color: goldenrod;
+    border-radius: 0.3rem;
+    position: relative;
+}
+
+.upperCardRow{
+    height:14.5rem;
+}
+
+.lowerCardRow{
+    height:3rem;
+}
+
+.modalBeautify{
+    border: solid 0.2rem;
+    border-color: goldenrod;
+    border-radius: 0.3rem;
+    text-align:center;
+}
+
+img{
+   width: 10rem;
+   height: 13rem;
+}
+
+form{
+    border-radius: 0.2rem;
+    border: solid 0.2rem;
+    border-color: cadetblue;
+   background-color: lightcyan;
+   margin-left: auto;
+   margin-right: auto;
+   width:90%;
+   height: 30rem;
+}
+
+label{
+    margin-left: 0.5rem;
+}
+
+.btn, .btn-large, .btn-small, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.collection .collection-item {
+    margin-bottom: 0.4rem;
+    line-height: 1.5rem;
+}
+
+a {
+ color:#FF9733;
+}
+
+.message {
+    text-shadow: #FF2212 1px 1px, #FF2212 -1px 1px, #FF2212 -1px -1px, #FF2212 1px -1px;
+    font-size: 2rem;
+    line-height: 80%;
+    margin: 2.8rem 0 1.68rem 0;
+    text-align: center;
+    color: blue;
+}
+
+.war {
+ border-radius: 0.3rem;
+ border: solid 0.5rem;
+ border-color: #FF0D00;
+ width: 30rem;
+ height: 15rem;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ 
+ .war2 {
+ border-radius: 0.3rem;
+ border: solid 0.5rem;
+ border-color: #FF0D00;
+ width: 30rem;
+ height: 15rem;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ 
+ .card {
+    margin-left: auto;
+    margin-right: auto; 
+    border: solid 0.5rem;
+    border-color: goldenrod;
+    border-radius: 0.3rem;
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+}
+ 
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+}
+
+.card .card-title {
+    font-size: 15px;
+    font-weight: 300;
+}
+.blue-text {
+    color: #2196F3 !important;
+}
+
+div {
+    margin-bottom: 1rem;
+}
+*, ::before, ::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+ 
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #2bbbad;
+}
+.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-floating:hover {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+}
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+.btn, .btn-large, .btn-small, .btn-flat {
+    margin-bottom: 0.2rem;
+    float: right;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+.btn, .btn-large, .btn-small {
+    margin-bottom: 0.3rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+}
+.btn, .btn-large, .btn-small, .btn-floating, .btn-large, .btn-small, .btn-flat {
+    font-size: 14px;
+    outline: 0;
+}
+.btn, .btn-large, .btn-small, .btn-flat {
+    
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+a {
+    color: #FF9733;
+}
+a {
+    text-decoration: none;
+}
+a {
+    color: #039be5;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+*, ::before, ::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+ul:not(.browser-default) {
+    list-style-type: none;
+}
