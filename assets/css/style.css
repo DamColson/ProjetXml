@@ -2,6 +2,16 @@ nav{
 margin-bottom: 1rem;    
 }
 
+nav ul a {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    font-size: 1rem;
+    color: #F7F6F9;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
 .red{
  border: solid 0.01rem;
  border-color: #E32727;
@@ -19,13 +29,14 @@ margin-bottom: 1rem;
 }
 
 .collection{
+ background-color: white; 
  border-radius: 0.3rem;
  height: 10rem;   
 }
 
 .card{
     height: 45.5rem;
-    border: solid 0.5rem;
+    border: solid 0.2rem;
     border-color: goldenrod;
     border-radius: 0.3rem;
     position: relative;
@@ -33,7 +44,7 @@ margin-bottom: 1rem;
 
 img{
    width: 10rem;
-   height: 30.5rem;
+   height: 13rem;
 }
 
 form{
@@ -52,7 +63,6 @@ label{
 }
 
 .btn, .btn-large, .btn-small, .btn-flat {
-    margin-left: 0.5rem;
     border: none;
     border-radius: 2px;
     display: inline-block;
@@ -62,6 +72,10 @@ label{
     text-transform: uppercase;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
+}
+.collection .collection-item {
+    margin-bottom: 0.4rem;
+    line-height: 1.5rem;
 }
 
 a {
@@ -96,3 +110,43 @@ a {
  margin-left: auto;
  margin-right: auto;
  }
+ 
+ .card {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 27rem;
+    height: 33rem;
+    border: solid 0.5rem;
+    border-color: goldenrod;
+    border-radius: 0.3rem;
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+}
+ 
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+}
+
+.card .card-title {
+    font-size: 15px;
+    font-weight: 300;
+}
+.blue-text {
+    color: #2196F3 !important;
+}
+
+div {
+    margin-bottom: 1rem;
+}
+*, ::before, ::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+ 

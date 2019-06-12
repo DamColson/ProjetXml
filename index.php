@@ -1,5 +1,6 @@
 <?php
 include 'file.php';
+$cardNumb=0;
 ?>
 
 
@@ -17,6 +18,16 @@ include 'file.php';
         <title></title>
     </head> 
     <body>
+        
+        <div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4></h4>
+      <p></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
         <nav class='<?php
         if ($_COOKIE['design'] == 'Rouge'):
             echo 'red';
@@ -64,7 +75,7 @@ include 'file.php';
                         elseif (count($_COOKIE) == 0):
                             echo 'red';
                         endif;
-                        ?> col s12">
+                        ?> col m4">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
@@ -72,13 +83,16 @@ include 'file.php';
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
                                     <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a data-page="xmlTechnos" data-card="<?=$cardNumb;?>" class=" modal-trigger triggerDescription" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                    $cardNumb++;
+                    endforeach; ?>
                 </div>
                 <?php
             elseif (isset($_GET['page']) && $_GET['page'] == 'Applis'):
@@ -96,7 +110,7 @@ include 'file.php';
                         elseif (count($_COOKIE) == 0):
                             echo 'red';
                         endif;
-                        ?> col s12">
+                        ?> col m4">
                             <div class="card ">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
@@ -104,13 +118,16 @@ include 'file.php';
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
                                     <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a data-page="xmlApplis" data-card="<?=$cardNumb;?>" class=" modal-trigger triggerDescription" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                    $cardNumb++;
+                    endforeach; ?>
                 </div>
                 <?php
             elseif (isset($_GET['page']) && $_GET['page'] == 'Security'):
@@ -128,7 +145,7 @@ include 'file.php';
                         elseif (count($_COOKIE) == 0):
                             echo 'red';
                         endif;
-                        ?> col s12">
+                        ?> col m4">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="<?= $elements->enclosure->attributes()->{'url'}; ?>" />
@@ -136,13 +153,16 @@ include 'file.php';
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
                                     <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">description</a>
+                                    <a data-page="xmlSecurity" data-card="<?=$cardNumb;?>" class=" modal-trigger triggerDescription" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                    $cardNumb++;
+                    endforeach; ?>
                 </div>
                 <?php
             elseif ((isset($_GET['page']) && $_GET['page'] == 'Accueil') || count($_GET) == 0):
@@ -165,7 +185,8 @@ include 'file.php';
                                         <img src="<?= $xmlSecurity->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                         <span class="title"><?= $xmlSecurity->channel->item[$i]->title ?></span>
                                         <p><?= $xmlSecurity->channel->item[$i]->pubDate ?></p>
-                                        <a type="button" class="btn waves-effect waves-light" href="">Description</a>
+                                        <a href="<?= $xmlSecurity->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
+                                        <a data-card="<?=$i;?>" data-page="xmlSecurity" type="button" class="btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
                                         </div>
                                         <?php
                                     endfor;
@@ -188,7 +209,8 @@ include 'file.php';
                                                         <img src="<?= $xmlApplis->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                         <span class="title"><?= $xmlApplis->channel->item[$i]->title ?></span>
                                                         <p><?= $xmlApplis->channel->item[$i]->pubDate ?></p>
-                                                        <a type="button" class="btn waves-effect waves-light" href="">Description</a>
+                                                        <a href="<?= $xmlApplis->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
+                                                        <a data-card="<?=$i;?>" data-page="xmlApplis" type="button" class="btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
                                                         </div>
                                                         <?php
                                                     endfor;
@@ -211,7 +233,8 @@ include 'file.php';
                                                                         <img src="<?= $xmlTechnos->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                                         <span class="title"><?= $xmlTechnos->channel->item[$i]->title ?></span>
                                                                         <p><?= $xmlTechnos->channel->item[$i]->pubDate ?></p>
-                                                                        <a type="button" class="btn waves-effect waves-light" href="">Description</a>
+                                                                        <a href="<?= $xmlTechnos->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
+                                                                        <a data-card="<?=$i;?>" data-page="xmlTechnos" type="button" class="btn waves-effect waves-light modal-trigger triggerDescription" href="#modal1">Description</a>
                                                                         </div>
                                                                         <?php
                                                                     endfor;
