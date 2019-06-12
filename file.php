@@ -18,4 +18,6 @@ if(isset($_GET) && $_GET['page']=='Disconnect'):
     setcookie('numbArticle', FALSE, time() - 3600);
     header("Location: /");
 endif;
+
+ var_dump($_POST);
 ?>

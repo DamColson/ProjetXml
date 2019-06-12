@@ -1,5 +1,6 @@
 <?php
 include 'file.php';
+$cardNumb=0;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,6 +15,19 @@ include 'file.php';
         <title></title>
     </head> 
     <body>
+        <?php
+      
+?>
+        <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4></h4>
+      <p></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
         <nav class='<?php
         if ($_COOKIE['design'] == 'Rouge'):
             echo 'red';
@@ -39,7 +53,7 @@ include 'file.php';
                     <li class=''><a href=""><i class="material-icons">search</i></a></li>
                     <li class=''><a href=""><i class="material-icons">security</i></a></li>
                     <li class=''><a href="Disconnect"><i class="material-icons">settings</i></a></li>
-                    <li class=''<a href=""><i class=""><?= isset($_COOKIE['firstName']) ? $_COOKIE['firstName'] : ''; ?></i></a></li>
+                    <li class=''><a href=""><i class=""><?= isset($_COOKIE['firstName']) ? $_COOKIE['firstName'] : ''; ?></i></a></li>
                     <li class=''><a href="Disconnect"><i class="material-icons">toggle_on</i></a></li>
                 </ul>
             </div>
@@ -50,7 +64,8 @@ include 'file.php';
                 ?>
                 <div class="row">
                     <?php foreach ($xmlTechnos->channel->item as $elements):
-                        ?>
+                        
+                        ?>        
                         <div class="<?php
                         if ($_COOKIE['design'] == 'Rouge'):
                             echo 'red';
@@ -72,11 +87,13 @@ include 'file.php';
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
+                                    <a data-page="xmlTechnos" data-card="<?=$cardNumb;?>" class="waves-effect waves-light btn modal-trigger technos triggerDescription" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                    $cardNumb++;
+                    endforeach; ?>
                 </div>
                 <?php
             elseif (isset($_GET['page']) && $_GET['page'] == 'Applis'):
@@ -105,7 +122,7 @@ include 'file.php';
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
+                                    <a data-card="<?=$cardNumb?>" data-page="xmlApplis" class="waves-effect waves-light btn modal-trigger triggerDescription applis" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
@@ -138,11 +155,13 @@ include 'file.php';
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
-                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">description</a>
+                                    <a data-card="<?=$cardNumb?>" data-page="xmlSecurity" class="waves-effect waves-light btn modal-trigger triggerDescription security" href="#modal1">description</a>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                    $cardNumb++;
+                    endforeach; ?>
                 </div>
                 <?php
             elseif ((isset($_GET['page']) && $_GET['page'] == 'Accueil') || count($_GET) == 0):
@@ -166,7 +185,7 @@ include 'file.php';
                                         <span class="title"><?= $xmlSecurity->channel->item[$i]->title ?></span>
                                         <p><?= $xmlSecurity->channel->item[$i]->pubDate ?></p>
                                         <a href="<?= $xmlSecurity->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
-                                        <a type="button" class="waves-effect waves-light btn modal-trigger" href="#modal1">Description</a>
+                                        <a data-card="<?=$i;?>" data-page="xmlSecurity" type="button" class="waves-effect waves-light btn modal-trigger triggerDescription security" href="#modal1">Description</a>
                                         </div>
                                         <?php
                                     endfor;
@@ -190,7 +209,7 @@ include 'file.php';
                                                         <span class="title"><?= $xmlApplis->channel->item[$i]->title ?></span>
                                                         <p><?= $xmlApplis->channel->item[$i]->pubDate ?></p>
                                                         <a href="<?= $xmlApplis->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
-                                                        <a type="button" class="waves-effect waves-light btn modal-trigger" href="#modal1">Description</a>
+                                                        <a data-card="<?=$i;?>" data-page="xmlApplis" type="button" class="waves-effect waves-light btn modal-trigger triggerDescription applis" href="#modal1">Description</a>
                                                         </div>
                                                         <?php
                                                     endfor;
@@ -214,7 +233,7 @@ include 'file.php';
                                                                         <span class="title"><?= $xmlTechnos->channel->item[$i]->title ?></span>
                                                                         <p><?= $xmlTechnos->channel->item[$i]->pubDate ?></p>
                                                                         <a href="<?= $xmlTechnos->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
-                                                                        <a type="button" class="waves-effect waves-light btn modal-trigger" href="#modal1">Description</a>
+                                                                        <a data-card="<?=$i;?>" data-page="xmlTechnos" type="button" class="waves-effect waves-light btn modal-trigger triggerDescription technos" href="#modal1">Description</a>
                                                                         </div>
                                                                         <?php
                                                                     endfor;
@@ -251,7 +270,6 @@ include 'file.php';
                                                                     <div class="modal-footer">
                                                                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
                                                                     </div>
-
                                                                 </div>
 
 
