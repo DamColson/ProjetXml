@@ -83,7 +83,7 @@ $cardNumb=0;
                                 </div>
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
-                                    <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <p class="card-title blue-text"><?= ucfirst(dateFr($elements->pubDate)); ?></p>
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
@@ -118,7 +118,7 @@ $cardNumb=0;
                                 </div>
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
-                                    <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <p class="card-title blue-text"><?= ucfirst(dateFr($elements->pubDate)); ?></p>
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
@@ -151,7 +151,7 @@ $cardNumb=0;
                                 </div>
                                 <div class="card-content">
                                     <p class="card-title blue-text"><?= $elements->title; ?></p>
-                                    <p class="card-title blue-text"><?= $elements->pubDate; ?></p>
+                                    <p class="card-title blue-text"><?= ucfirst(dateFr($elements->pubDate)); ?></p>
                                     <a href="<?= $elements->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                 </div>
                                 <div class="card-action">
@@ -183,7 +183,7 @@ $cardNumb=0;
                                     <li class="collection-item avatar">
                                         <img src="<?= $xmlSecurity->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                         <span class="title"><?= $xmlSecurity->channel->item[$i]->title ?></span>
-                                        <p><?= $xmlSecurity->channel->item[$i]->pubDate ?></p>
+                                        <p><?= ucfirst(dateFr($xmlSecurity->channel->item[$i]->pubDate)) ?></p>
                                         <a href="<?= $xmlSecurity->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                         <a data-card="<?=$i;?>" data-page="xmlSecurity" type="button" class="waves-effect waves-light btn modal-trigger triggerDescription security" href="#modal1">Description</a>
                                         </div>
@@ -207,7 +207,7 @@ $cardNumb=0;
                                                     <li class="collection-item avatar">
                                                         <img src="<?= $xmlApplis->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                         <span class="title"><?= $xmlApplis->channel->item[$i]->title ?></span>
-                                                        <p><?= $xmlApplis->channel->item[$i]->pubDate ?></p>
+                                                        <p><?= ucfirst(dateFr($xmlApplis->channel->item[$i]->pubDate)) ?></p>
                                                         <a href="<?= $xmlApplis->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                                         <a data-card="<?=$i;?>" data-page="xmlApplis" type="button" class="waves-effect waves-light btn modal-trigger triggerDescription applis" href="#modal1">Description</a>
                                                         </div>
@@ -231,7 +231,7 @@ $cardNumb=0;
                                                                     <li class="collection-item avatar">
                                                                         <img src="<?= $xmlTechnos->channel->item[$i]->enclosure->attributes()->{'url'}; ?>" alt="" class="circle">
                                                                         <span class="title"><?= $xmlTechnos->channel->item[$i]->title ?></span>
-                                                                        <p><?= $xmlTechnos->channel->item[$i]->pubDate ?></p>
+                                                                        <p><?= ucfirst(dateFr($xmlTechnos->channel->item[$i]->pubDate)) ?></p>
                                                                         <a href="<?= $xmlTechnos->channel->item[$i]->guid; ?>" class="card-title blue-text">Lien vers l'article</a>
                                                                         <a data-card="<?=$i;?>" data-page="xmlTechnos" type="button" class="waves-effect waves-light btn modal-trigger triggerDescription technos" href="#modal1">Description</a>
                                                                         </div>

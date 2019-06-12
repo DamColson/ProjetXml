@@ -19,5 +19,12 @@ if(isset($_GET) && $_GET['page']=='Disconnect'):
     header("Location: /");
 endif;
 
- var_dump($_POST);
+/* Configure le script en français */
+setlocale (LC_TIME, 'fr_FR.UTF8','fra');
+//Définit le décalage horaire par défaut de toutes les fonctions date/heure  
+date_default_timezone_set("Europe/Paris");
+//Convertir une date US en françcais
+function dateFr($date){
+return strftime('%A %d %B %Y, %H:%M:%S',strtotime($date));
+}
 ?>
